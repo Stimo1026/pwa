@@ -1,0 +1,42 @@
+main {
+    display: grid;
+    grid-template-columns: 20vh 20vh 20vh;
+    grid-gap: 2vh;
+}
+
+app-tile {
+    height: 20vh;
+}
+
+input{
+    text-align: center;
+    margin: 2vh;
+    font-size: 3vw !important;
+    width: fit-content;
+}
+
+div{
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    line-height: 1.6;
+    text-align: center;
+    font-size:3vw;
+    margin-right: 2vh;
+    margin-left: 2vh;
+}
+nb-card{
+    align-items: center;
+    width: 30%;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.btn{
+    width: 70vh;
+    height: 10vh;
+    font-size: 3vw !important;
+}

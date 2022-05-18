@@ -1,0 +1,40 @@
+<div *ngIf="gameRunning == false">
+    <input id="xName" type="text" maxlength="10" placeholder="X players name">
+    <input id="oName" type="text" maxlength="10" placeholder="O players name">
+</div>
+<div *ngIf="gameRunning == false"><button class="btn" nbButton outline status="danger" style="margin: 10px;" (click)="startGame()"> Start the game!</button></div>
+
+
+<div *ngIf="gameRunning == true">
+    <nb-card style="background-color: #00d68f;" status="success">
+            <h1>O player: {{ oName }}</h1>
+    </nb-card>
+    <nb-card>
+        <h1>Currrent player: {{ player }}</h1>
+    </nb-card>
+    <nb-card style="background-color: #ff3d71;" status="danger">
+    
+            <h1>X player: {{ xName }}</h1>
+
+    </nb-card>
+   
+</div>
+<div *ngIf="gameRunning == true"> 
+    <main>
+        <app-tile
+            *ngFor="let val of tiles; let i = index"
+            [value] = "val"
+            (click)="makeMove(i)">
+        </app-tile>
+    </main>
+</div>
+<div *ngIf="gameRunning == true">
+    <h1 *ngIf="winner !== null && winner !== 'draw'">
+        Player {{ winner }} won the game!
+    </h1>
+    <h1 *ngIf="winner == 'draw'"> It's a draw!</h1>
+</div>
+<div *ngIf="gameRunning == true">
+    <button class="btn" nbButton outline status="danger" style="margin: 10px;" (click)="newGame()"> Start new game!</button>
+</div> 
+
